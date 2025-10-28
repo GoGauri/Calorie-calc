@@ -1,0 +1,103 @@
+:root {
+  --bg: #0b0f14;
+  --card: #121822;
+  --text: #e7edf3;
+  --muted: #a9b3be;
+  --primary: #4f8cff;
+  --danger: #ff5d5d;
+  --border: #1f2a3a;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: linear-gradient(180deg, #0b0f14, #0b0f14 200px, #0e141b 100%);
+  color: var(--text);
+}
+
+.site-header {
+  padding: 32px 16px 8px;
+  text-align: center;
+}
+.site-header h1 { margin: 0; font-weight: 700; }
+.subtitle { color: var(--muted); margin-top: 8px; }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+h2 { margin: 0 0 12px; font-size: 20px; }
+label span { display: block; color: var(--muted); margin-bottom: 6px; font-size: 14px; }
+
+input, select, button {
+  font: inherit;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0e141b;
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.span-2 { grid-column: span 2; }
+
+.actions { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0e141b;
+  color: var(--text);
+  cursor: pointer;
+}
+.btn.primary { background: var(--primary); border-color: #2f6fe6; color: white; }
+.btn.danger { background: var(--danger); border-color: #e63b3b; color: white; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.results { margin-top: 12px; color: var(--text); }
+.hidden { display: none; }
+
+.guidelines { margin: 0; padding-left: 18px; color: var(--text); }
+.guidelines li { margin: 6px 0; }
+
+.totals { display: flex; gap: 24px; margin-top: 12px; }
+
+.table-wrap { overflow-x: auto; margin-top: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+.site-footer { text-align: center; color: var(--muted); padding: 24px 16px; }
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  #tracker-section { grid-column: span 2; }
+}
+
+
